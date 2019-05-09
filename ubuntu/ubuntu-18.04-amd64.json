@@ -237,7 +237,6 @@
       ],
       "boot_wait": "10s",
       "communicator": "ssh",
-      "cpu": "{{ user `cpus` }}",
       "disk_size": "{{user `disk_size`}}",
       "enable_secure_boot": false,
       "generation": "{{user `hyperv_generation`}}",
@@ -246,7 +245,6 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `mirror`}}/{{user `mirror_directory`}}/{{user `iso_name`}}",
       "output_directory": "../builds/packer-{{user `template`}}-hyperv",
-      "ram_size": "{{user `memory`}}",
       "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -283,7 +281,7 @@
         "scripts/vmware.sh",
         "../_common/parallels.sh",
         "scripts/hyperv.sh",
-        "scripts/cleanup.sh",
+        "scripts/homestead.sh",
         "../_common/minimize.sh"
       ],
       "type": "shell"
